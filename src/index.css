@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-transform: capitalize;
+}
+
+h2 {
+    padding-bottom: 1rem;
+    margin-left: 5rem;
+}
+
+.card-contain {
+    padding-top: 0.5rem;
+}
+
+.card-container {
+    display: flex;
+    overflow: auto;
+    flex-wrap: nowrap;
+    padding-left: 3rem;
+    overflow-x: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.card-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-details {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.details-people-top img {
+    width: 15rem;
+    height: auto;
+}
+
+.details-people-top {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.details-people-description {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.table-detail {
+    margin-top: 1rem;
+ 
+    --bs-table-bg: var(--bs-body-bg) #131212;
+    --bs-table-color: white;
+}
+
+.t-head {
+    color: white;
+    background-color: blue;
+}
+.t-body{
+   color: white;
+}
