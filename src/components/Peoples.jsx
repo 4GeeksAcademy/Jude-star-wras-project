@@ -6,9 +6,6 @@ import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 
-
-
-
 const People = () => {
     const api_url = "https://www.swapi.tech/api/people/"
     const { store, dispatch } = useGlobalReducer()

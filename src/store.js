@@ -16,6 +16,7 @@ export const initialStore = () => {
 
     character: [],
     favorites: [],
+    planet: [],
 
   }
 
@@ -52,7 +53,16 @@ export default function storeReducer(store, action = {}) {
       return {
         ...store,
         favorites: store.favorites.filter(favorite => favorite.uid !== action.payload)
+      };
+      case "setPlanets":
+         const { planeta }= action.payload
+
+      return {    
+        ...store,
+     
+        planet: planeta
       }
+
 
     default:
       throw Error('Unknown action.');
