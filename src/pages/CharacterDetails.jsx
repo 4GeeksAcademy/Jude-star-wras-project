@@ -24,6 +24,7 @@ const CharacterDetails = () => {
 
     return (
         <div className="container-details">
+            
             <div className="details-people-top">
                 <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/2.jpg" alt="" />
                 <div className="details-people-description">

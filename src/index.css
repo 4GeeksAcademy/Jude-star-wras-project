@@ -5,7 +5,11 @@
     outline: none;
     text-transform: capitalize;
 }
-
+.navbar{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
 .logo-nav {
     width: 4rem;
     height: auto;
@@ -41,6 +45,9 @@ h2 {
     padding-bottom: 1rem;
     margin-left: 5rem;
 }
+.cha{
+    margin-top: 5rem;
+}
 
 .card-contain {
     padding-top: 0.5rem;
@@ -73,6 +80,9 @@ ul {
     flex-direction: column;
     flex-wrap: wrap;
 }
+.container-details-top{
+  margin-top: 2rem;
+}
 
 .details-people-top img {
     width: 15rem;
@@ -82,6 +92,7 @@ ul {
 .details-people-top {
     display: flex;
     justify-content: space-between;
+    margin-top: 5rem;
 
 }
 
@@ -106,4 +117,9 @@ ul {
 
 .t-body {
     color: white;
+}
+.title-planet {
+    margin-top: 4rem;
+    padding-bottom: 0;
+  margin-left: 0;
 }

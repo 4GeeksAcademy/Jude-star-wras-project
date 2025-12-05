@@ -31,10 +31,10 @@ const Planets = () => {
         getApiPlanet()
     }, [])
 
-    const addToFavorite = (dataPlanet) => {
+    const addToFavorite = (planetId) => {
         dispatch({
             type: "setFavorites",
-            payload: dataPlanet
+            payload: planetId,
         })
     }
 

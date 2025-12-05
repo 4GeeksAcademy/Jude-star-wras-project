@@ -9,10 +9,11 @@ export const Home = () => {
 	return (
 		<div  >
 			<div className="card-contain">
-				<h2>Characters</h2>
+				<h2 className="cha">Characters</h2>
 				<People />
 			</div>
 			<div>
+				<h2>Planets</h2>
 				<Planets />
 			</div>
 		</div>
