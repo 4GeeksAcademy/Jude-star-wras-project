@@ -6,6 +6,37 @@
     text-transform: capitalize;
 }
 
+.logo-nav {
+    width: 4rem;
+    height: auto;
+}
+
+.dropdown-navbar {
+    margin-right: 2rem;
+}
+.dropdown-toggle span{
+    background: rgb(150, 149, 149);
+   padding-right: 0.2rem;
+   padding-left: 0.2rem;
+   border-radius: 3px;
+   font-size: 0.8rem;
+}
+
+.navbar-favorite {
+    padding: 0.5rem;
+}
+
+.dropdown-menu {
+    --bs-dropdown-min-width: 15rem;
+}
+
+.button-trash {
+    background-color: white;
+    border: none;
+    margin-left: 1.8rem;
+}
+
+
 h2 {
     padding-bottom: 1rem;
     margin-left: 5rem;
@@ -63,7 +94,7 @@ ul {
 
 .table-detail {
     margin-top: 1rem;
- 
+
     --bs-table-bg: var(--bs-body-bg) #131212;
     --bs-table-color: white;
 }
@@ -72,6 +103,7 @@ ul {
     color: white;
     background-color: blue;
 }
-.t-body{
-   color: white;
+
+.t-body {
+    color: white;
 }

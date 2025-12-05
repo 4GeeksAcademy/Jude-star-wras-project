@@ -14,7 +14,8 @@ export const initialStore = () => {
       }
     ],
 
-    character: []
+    character: [],
+    favorites: [],
 
   }
 
@@ -37,7 +38,22 @@ export default function storeReducer(store, action = {}) {
 
       return {
         ...store, character: personajes
+      };
+
+    case "setFavorites":
+
+      // const { addToFavorite } = action.payload
+      return {
+        ...store,
+        favorites: [...store.favorites, action.payload]
+      };
+    case "removeFavoriteId":
+
+      return {
+        ...store,
+        favorites: store.favorites.filter(favorite => favorite.uid !== action.payload)
       }
+
     default:
       throw Error('Unknown action.');
   };

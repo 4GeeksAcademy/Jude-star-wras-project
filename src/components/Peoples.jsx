@@ -4,19 +4,14 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
-import CharacterDetails from "../pages/CharacterDetails.jsx";
+
+
 
 
 
 const People = () => {
     const api_url = "https://www.swapi.tech/api/people/"
     const { store, dispatch } = useGlobalReducer()
-
-    // const navigate = useNavigate()
-
-    // const moreDetail = (id) => {
-    //     navigate(`/characterDetails/${id}`)
-    // }
 
     const getApiPeople = async () => {
 
@@ -41,14 +36,22 @@ const People = () => {
         getApiPeople()
     }, [])
 
-    console.log(store.character)
+    // console.log(store.character)
+
+    const addToListFavorite = (peopleId) => {
+
+        dispatch({
+            type: "setFavorites",
+            payload: peopleId,
+        })
+    }
 
     return (
         <div className="card-container">
             {
                 store.character.map((item, uid) =>
-                    <ul className="">
-                        <div className="card card-p" style={{ width: "18rem" }} key={uid} >
+                    <ul key={uid} className="">
+                        <div className="card card-p" style={{ width: "18rem" }} >
                             <li>
                                 <div>
                                     <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/2.jpg" alt="" />
@@ -57,7 +60,9 @@ const People = () => {
                                     <h4 className="card-title"> {item.name} </h4>
                                     <div className="card-button">
                                         <Link className="btn btn-outline-primary" to={"/characterDetails/" + item.uid}>Learn more! </Link>
-                                        <button className="btn btn-outline-warning"> <FontAwesomeIcon icon={faHeartRegular} /> </button>
+                                        <button className="btn btn-outline-warning"
+                                            onClick={() => addToListFavorite(item)} type="button">
+                                            <FontAwesomeIcon icon={faHeartRegular} /> </button>
                                     </div>
                                 </div>
                             </li>
@@ -65,7 +70,6 @@ const People = () => {
                         </div>
                     </ul>
                 )
-
             }
         </div>
     )
