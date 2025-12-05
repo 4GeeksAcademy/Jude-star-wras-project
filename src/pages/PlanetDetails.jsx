@@ -2,32 +2,34 @@ import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
-const CharacterDetails = () => {
 
-    const api_url = "https://www.swapi.tech/api/people/"
+
+const PlanetDetails = () => {
+
     const { store } = useGlobalReducer();
+    const api_url = "https://www.swapi.tech/api/planets/"
 
     const { uid } = useParams()
-    const [detailPeople, setDetailPeople] = useState([])
+    const [detailPlanet, setDetailPLanet] = useState([])
 
-
-    const getInfoPeople = async () => {
+    const getDetailsPlanet = async () => {
         const resp = await fetch(api_url + uid)
         const data = await resp.json()
-        setDetailPeople(data.result.properties)
+        setDetailPLanet(data.result.properties)
     }
+
     useEffect(() => {
-        getInfoPeople()
+        getDetailsPlanet()
     }, [])
 
-    // console.log(detailPeople)
+    console.log(detailPlanet)
 
     return (
         <div className="container-details">
             <div className="details-people-top">
-                <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/2.jpg" alt="" />
+                <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/planets/2.jpg" alt="" />
                 <div className="details-people-description">
-                    <h4>{detailPeople.name}</h4>
+                    <h4>{detailPlanet.name}</h4>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ipsam tempore voluptate earum
                         beatae eos, optio consequuntur ullam. Quidem excepturi aliquam fuga molestias eius voluptates
                         atque nostrum, consequatur quod quisquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatum eligendi itaque ex illum,
@@ -40,32 +42,32 @@ const CharacterDetails = () => {
                     <tr>
                         <th>created</th>
                         <th> edited </th>
-                        <th>birth_year</th>
-                        <th>gender</th>
-                        <th>eye_color</th>
-                        <th>  hair_color  </th>
-                        <th>homeworld</th>
-                        <th>skin_color</th>
+                        <th>climate</th>
+                        <th>diameter</th>
+                        <th>gravity</th>
+                        <th>  population  </th>
+                        <th>rotation_period</th>
+                        <th>terrain</th>
                     </tr>
                 </thead>
                 <tbody className="t-body">
                     <tr>
-                        <td> {detailPeople.created} </td>
-                        <td> {detailPeople.edited} </td>
-                        <td> {detailPeople.birth_year} </td>
-                        <td> {detailPeople.gender} </td>
-                        <td> {detailPeople.eye_color} </td>
-                        <td> {detailPeople.hair_color} </td>
-                        <td> {detailPeople.homeworld} </td>
-                        <td> {detailPeople.skin_color} </td>
+                        <td> {detailPlanet.created} </td>
+                        <td> {detailPlanet.edited} </td>
+                        <td> {detailPlanet.climate} </td>
+                        <td> {detailPlanet.diameter} </td>
+                        <td> {detailPlanet.gravity} </td>
+                        <td> {detailPlanet.population} </td>
+                        <td> {detailPlanet.rotation_period} </td>
+                        <td> {detailPlanet.terrain
+                        } </td>
 
                     </tr>
                 </tbody>
             </table>
-          
+
             <p>{ }</p>
         </div>
-    );
-};
-
-export default CharacterDetails;
+    )
+}
+export default PlanetDetails

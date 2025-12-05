@@ -7,14 +7,14 @@ export const Home = () => {
 	const { store, dispatch } = useGlobalReducer()
 
 	return (
-		<div className="card-container" >
+		<div  >
 			<div className="card-contain">
 				<h2>Characters</h2>
 				<People />
-				<h2>PLanets</h2>
+			</div>
+			<div>
 				<Planets />
 			</div>
-
 		</div>
 	);
 }; 

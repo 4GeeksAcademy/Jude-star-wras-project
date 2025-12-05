@@ -38,7 +38,8 @@ export default function storeReducer(store, action = {}) {
       const { personajes } = action.payload
 
       return {
-        ...store, character: personajes
+        ...store,
+         character: personajes
       };
 
     case "setFavorites":
