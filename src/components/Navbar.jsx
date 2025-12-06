@@ -36,9 +36,14 @@ export const Navbar = () => {
 
 						<ul className="dropdown-menu">
 							{
-								favorites.map((value, uid) =>
-									<li key={uid} className="navbar-favorite" >
-										<Link to={"/characterDetails/" + value.uid}>
+								favorites.map((value) =>
+									<li key={value.diferentId} className="navbar-favorite" >
+										<Link to={
+											value.type === "people" ?
+											`/characterDetails/${value.uid}`
+											:
+											`/planetDetails/${value.uid}`
+											}>
 											{value.name}
 										</Link>
 										<button className="button-trash" onClick={() => deleteFavorites(value.uid)} >   <FontAwesomeIcon icon={faTrash} />  </button>

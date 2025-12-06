@@ -45,14 +45,14 @@ export default function storeReducer(store, action = {}) {
     case "setFavorites":
 
       const favoriteAdded = store.favorites.some(favoriteId =>
-        favoriteId.uid === action.payload.uid
+        favoriteId.diferentId === action.payload.diferentId
       );
 
       if (favoriteAdded) {
         return {
           ...store,
           favorites: store.favorites.filter(
-            idFav => idFav.uid !== action.payload.uid)
+            idFav => idFav.diferentId !== action.payload.diferentId)
         };
       }
 

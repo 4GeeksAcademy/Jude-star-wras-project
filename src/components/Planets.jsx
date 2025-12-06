@@ -32,23 +32,23 @@ const Planets = () => {
         getApiPlanet()
     }, [])
 
-    const addToFavorite = (planetId) => {
+    const addToFavorite = (item) => {
         dispatch({
             type: "setFavorites",
-            payload: planetId,
+            payload: { ...item, type: "planet", diferentId:`planet-${item.uid}` }
         })
     }
 
     // console.log(store.planet)
     return (
-        <div className="card-container">
+        <div className="container card-container">
             {
                 store.planet.map((item, index) =>
                     <ul key={index}>
                         <div className="card card-p" style={{ width: "18rem" }}>
                             <li>
                                 <div>
-                                    <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/planets/2.jpg" alt="" />
+                                    <img className="card-img-top card-image" src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/planets/${item.uid}.jpg`} alt="" />
                                 </div>
                                 <div className="card-body">
                                     <h4 className="card-title"> {item.name} </h4>
@@ -57,7 +57,7 @@ const Planets = () => {
                                         <button className="btn btn-outline-warning"
                                             onClick={() => addToFavorite(item)} type="button">
                                             <FontAwesomeIcon icon={
-                                                store.favorites.some(favorito => favorito.uid === item.uid) ?
+                                                store.favorites.some(favorito => favorito.diferentId === `planet-${item.uid}`) ?
                                                 faSolidHeart
                                                 :
                                                 faHeartRegular
@@ -68,7 +68,6 @@ const Planets = () => {
                             </li>
                         </div>
                     </ul>
-
                 )
             }
         </div>

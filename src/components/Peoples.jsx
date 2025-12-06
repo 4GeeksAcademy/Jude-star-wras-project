@@ -4,6 +4,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
+import Planets from "./Planets.jsx";
 
 
 const People = () => {
@@ -35,23 +36,23 @@ const People = () => {
 
     // console.log(store.character)
 
-    const addToListFavorite = (peopleId) => {
+    const addToListFavorite = (item) => {
 
         dispatch({
             type: "setFavorites",
-            payload: peopleId,
+            payload: { ...item, type: "people", diferentId: `people-${item.uid}` }
         })
     }
 
     return (
-        <div className="card-container">
+        <div className="container card-container">
             {
                 store.character.map((item, uid) =>
                     <ul key={uid} className="">
                         <div className="card card-p" style={{ width: "18rem" }} >
                             <li>
                                 <div>
-                                    <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/2.jpg" alt="" />
+                                    <img className="card-img-top card-image"src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/${item.uid}.jpg`} alt="" />
                                 </div>
                                 <div className="card-body">
                                     <h4 className="card-title"> {item.name} </h4>
@@ -60,7 +61,7 @@ const People = () => {
                                         <button className="btn btn-outline-warning"
                                             onClick={() => addToListFavorite(item)} type="button">
                                             <FontAwesomeIcon icon={
-                                                store.favorites.some(favorito => favorito.uid === item.uid) ?
+                                                store.favorites.some(favorito => favorito.diferentId === `people-${item.uid}`) ?
                                                     faSolidHeart
                                                     :
                                                     faHeartRegular

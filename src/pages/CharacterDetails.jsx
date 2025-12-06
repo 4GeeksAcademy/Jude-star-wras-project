@@ -20,13 +20,13 @@ const CharacterDetails = () => {
         getInfoPeople()
     }, [])
 
-    // console.log(detailPeople)
+    //  console.log(detailPeople)
 
     return (
         <div className="container-details">
             
             <div className="details-people-top">
-                <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/2.jpg" alt="" />
+                <img className="card-img-top card-image" src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/${uid}.jpg`} alt="" />
                 <div className="details-people-description">
                     <h4>{detailPeople.name}</h4>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ipsam tempore voluptate earum

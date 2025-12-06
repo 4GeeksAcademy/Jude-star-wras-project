@@ -28,7 +28,7 @@ const PlanetDetails = () => {
         <div className="container-details">
             <div className="container-details-top">
                 <div className="details-people-top">
-                    <img className="card-img-top card-image" src="https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/planets/2.jpg" alt="" />
+                    <img className="card-img-top card-image" src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/planets/${uid}.jpg`} alt="" />
                     <div className="details-people-description">
                         <h4>{detailPlanet.name}</h4>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ipsam tempore voluptate earum
