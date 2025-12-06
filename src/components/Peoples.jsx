@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 
 const People = () => {
@@ -59,7 +59,13 @@ const People = () => {
                                         <Link className="btn btn-outline-primary" to={"/characterDetails/" + item.uid}>Learn more! </Link>
                                         <button className="btn btn-outline-warning"
                                             onClick={() => addToListFavorite(item)} type="button">
-                                            <FontAwesomeIcon icon={faHeartRegular} /> </button>
+                                            <FontAwesomeIcon icon={
+                                                store.favorites.some(favorito => favorito.uid === item.uid) ?
+                                                    faSolidHeart
+                                                    :
+                                                    faHeartRegular
+                                            }
+                                            /> </button>
                                     </div>
                                 </div>
                             </li>

@@ -39,12 +39,23 @@ export default function storeReducer(store, action = {}) {
 
       return {
         ...store,
-         character: personajes
+        character: personajes
       };
 
     case "setFavorites":
 
-      // const { addToFavorite } = action.payload
+      const favoriteAdded = store.favorites.some(favoriteId =>
+        favoriteId.uid === action.payload.uid
+      );
+
+      if (favoriteAdded) {
+        return {
+          ...store,
+          favorites: store.favorites.filter(
+            idFav => idFav.uid !== action.payload.uid)
+        };
+      }
+
       return {
         ...store,
         favorites: [...store.favorites, action.payload]
@@ -55,12 +66,12 @@ export default function storeReducer(store, action = {}) {
         ...store,
         favorites: store.favorites.filter(favorite => favorite.uid !== action.payload)
       };
-      case "setPlanets":
-         const { planeta }= action.payload
+    case "setPlanets":
+      const { planeta } = action.payload
 
-      return {    
+      return {
         ...store,
-     
+
         planet: planeta
       }
 
