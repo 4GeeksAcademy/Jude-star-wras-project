@@ -22,7 +22,7 @@ const PlanetDetails = () => {
         getDetailsPlanet()
     }, [])
 
-    console.log(detailPlanet)
+    // console.log(detailPlanet)
 
     return (
         <div className="container-details">

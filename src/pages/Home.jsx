@@ -1,6 +1,7 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import People from "../components/Peoples.jsx";
 import Planets from "../components/Planets.jsx";
+import Vehicles from "../components/Vehicles.jsx";
 
 export const Home = () => {
 
@@ -15,6 +16,10 @@ export const Home = () => {
 			<div>
 				<h2>Planets</h2>
 				<Planets />
+			</div>
+			<div>
+				<h2>Vehicles</h2>
+				<Vehicles />
 			</div>
 		</div>
 	);
