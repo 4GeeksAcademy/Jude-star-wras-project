@@ -11,7 +11,8 @@
     width: 100%;
 }
 .logo-nav {
-    width: 4rem;
+   
+     width: 3rem;
     height: auto;
 }
 
@@ -71,14 +72,13 @@ ul {
 }
 
 .container-details {
-    width: 80%;
+    width: 90%;
     margin: auto;
     background-color: rgb(12, 12, 12);
     color: white;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 .container-details-top{
   margin-top: 2rem;
@@ -87,13 +87,16 @@ ul {
 .details-people-top img {
     width: 15rem;
     height: auto;
+       max-width: 300px;
+    border-radius: 8px;
 }
 
 .details-people-top {
     display: flex;
     justify-content: space-between;
     margin-top: 5rem;
-
+      gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .details-people-description {
@@ -101,11 +104,13 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 .table-detail {
     margin-top: 1rem;
-
     --bs-table-bg: var(--bs-body-bg) #131212;
     --bs-table-color: white;
 }
@@ -122,4 +127,26 @@ ul {
     margin-top: 4rem;
     padding-bottom: 0;
   margin-left: 0;
+}
+
+
+@media (max-width: 480px) {
+
+ 
+}
+
+/* ### TABLET ( 481px - 768px ) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+/* ### TABLET GRANDE Y LAPTOP PEQUEÑA (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    
+}
+
+/* ### LAPTOPS Y DESKTOP ( +1024px ) */
+@media (min-width: 1025px) {
+   
 }

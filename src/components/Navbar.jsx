@@ -40,10 +40,16 @@ export const Navbar = () => {
 									<li key={value.diferentId} className="navbar-favorite" >
 										<Link to={
 											value.type === "people" ?
-											`/characterDetails/${value.uid}`
-											:
-											`/planetDetails/${value.uid}`
-											}>
+												`/characterDetails/${value.uid}`
+												:
+												value.type === "planet" ?
+													`/planetDetails/${value.uid}`
+													:
+													value.type === "vehiculo" ?
+														`/vehicleDetails/${value.uid}`
+														:
+														"#"
+										}>
 											{value.name}
 										</Link>
 										<button className="button-trash" onClick={() => deleteFavorites(value.uid)} >   <FontAwesomeIcon icon={faTrash} />  </button>

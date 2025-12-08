@@ -32,7 +32,7 @@ const Vehicles = () => {
         getApiVehicles()
     }, [])
 
-     console.log(store.vehicles)
+    //  console.log(store.vehicles)
 
     const addToFavorite = (vehicle) => {
         dispatch({
@@ -46,21 +46,21 @@ const Vehicles = () => {
 return (
     <div className="container card-container">
         {
-            store.vehicles.map((item, uid) =>
-                <ul key={uid} className="">
+            store.vehicles.map((item) =>
+                <ul key={item.uid} className="">
                     <div className="card card-p" style={{ width: "18rem" }} >
                         <li>
-                            <div>
+                            <div className="card-image">
                                 <img className="card-img-top card-image" src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicles/${item.uid}.jpg`} alt="" />
                             </div>
                             <div className="card-body">
                                 <h4 className="card-title"> {item.name} </h4>
                                 <div className="card-button">
-                                    <Link className="btn btn-outline-primary" to={"/characterDetails/" + item.uid}>Learn more! </Link>
+                                    <Link className="btn btn-outline-primary" to={"/vehicleDetails/" + item.uid}>Learn more! </Link>
                                     <button className="btn btn-outline-warning"
                                         onClick={() => addToFavorite(item)} type="button">
                                         <FontAwesomeIcon icon={
-                                            store.favorites.some(favorito => favorito.diferentId === `vehicle-${item.uid}`) ?
+                                            store.favorites.some(favorito => favorito.diferentId === `vehiculo-${item.uid}`) ?
                                                 faSolidHeart
                                                 :
                                                 faHeartRegular

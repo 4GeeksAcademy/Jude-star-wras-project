@@ -12,6 +12,7 @@ import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo"
 import CharacterDetails from "./pages/CharacterDetails";
 import PlanetDetails from "./pages/PlanetDetails";
+import  VehicleDetails  from "./pages/VehicleDetails";
 
 
 
@@ -32,6 +33,8 @@ export const router = createBrowserRouter(
       <Route path="/demo" element={<Demo />} />
       <Route path="/characterDetails/:uid" element={<CharacterDetails />} />
       <Route path="/planetDetails/:uid" element= {< PlanetDetails />} />
+      <Route path="/vehicleDetails/:uid" element= {< VehicleDetails />} /> 
+
     </Route>
   )
 );
