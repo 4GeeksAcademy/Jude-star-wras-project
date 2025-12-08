@@ -9,16 +9,16 @@ export const Home = () => {
 
 	return (
 		<div  >
-			<div className="card-contain">
+			<div className="container card-contain">
 				<h2 className="cha">Characters</h2>
 				<People />
 			</div>
-			<div>
-				<h2>Planets</h2>
+			<div className="container">
+				<h2 className="home-space">Planets</h2>
 				<Planets />
 			</div>
-			<div>
-				<h2>Vehicles</h2>
+			<div className="container">
+				<h2  className="home-space">Vehicles</h2>
 				<Vehicles />
 			</div>
 		</div>
