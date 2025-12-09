@@ -38,34 +38,36 @@ const PlanetDetails = () => {
                             excepturi modi perspiciatis.</p>
                     </div>
                 </div>
-                <table className="table table-borderless table-detail">
-                    <thead className="t-head">
-                        <tr>
-                            <th>created</th>
-                            <th> edited </th>
-                            <th>climate</th>
-                            <th>diameter</th>
-                            <th>gravity</th>
-                            <th>  population  </th>
-                            <th>rotation_period</th>
-                            <th>terrain</th>
-                        </tr>
-                    </thead>
-                    <tbody className="t-body">
-                        <tr>
-                            <td> {detailPlanet.created} </td>
-                            <td> {detailPlanet.edited} </td>
-                            <td> {detailPlanet.climate} </td>
-                            <td> {detailPlanet.diameter} </td>
-                            <td> {detailPlanet.gravity} </td>
-                            <td> {detailPlanet.population} </td>
-                            <td> {detailPlanet.rotation_period} </td>
-                            <td> {detailPlanet.terrain
-                            } </td>
+                <div className="table-scro">
+                    <table className="table table-borderless table-detail">
+                        <thead className="t-head">
+                            <tr>
+                                <th>created</th>
+                                <th> edited </th>
+                                <th>climate</th>
+                                <th>diameter</th>
+                                <th>gravity</th>
+                                <th>  population  </th>
+                                <th>rotation_period</th>
+                                <th>terrain</th>
+                            </tr>
+                        </thead>
+                        <tbody className="t-body">
+                            <tr>
+                                <td> {detailPlanet.created} </td>
+                                <td> {detailPlanet.edited} </td>
+                                <td> {detailPlanet.climate} </td>
+                                <td> {detailPlanet.diameter} </td>
+                                <td> {detailPlanet.gravity} </td>
+                                <td> {detailPlanet.population} </td>
+                                <td> {detailPlanet.rotation_period} </td>
+                                <td> {detailPlanet.terrain
+                                } </td>
 
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <p>{ }</p>
             </div>

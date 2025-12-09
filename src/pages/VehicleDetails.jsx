@@ -2,32 +2,32 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
- const VehicleDetails = () => {
+const VehicleDetails = () => {
 
-const { store, dispatch } = useGlobalReducer()
+    const { store, dispatch } = useGlobalReducer()
 
- const api_url = "https://www.swapi.tech/api/vehicles/"
+    const api_url = "https://www.swapi.tech/api/vehicles/"
 
-  const { uid } = useParams()
+    const { uid } = useParams()
 
- const [ detailVehicle, setDetailVehicle ] = useState([])
+    const [detailVehicle, setDetailVehicle] = useState([])
 
- const getDetailVehicle = async () => {
+    const getDetailVehicle = async () => {
 
-    const resp = await fetch(api_url + uid )
-    const data = await resp.json()
-    setDetailVehicle(data.result.properties)
- }
+        const resp = await fetch(api_url + uid)
+        const data = await resp.json()
+        setDetailVehicle(data.result.properties)
+    }
 
- useEffect(()=>{
-    getDetailVehicle()
- },[])
+    useEffect(() => {
+        getDetailVehicle()
+    }, [])
 
- console.log(detailVehicle)
+    console.log(detailVehicle)
 
-    return(
+    return (
         <div className="container-details">
-            
+
             <div className="details-people-top">
                 <img className="card-img-top card-image" src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicles/${uid}.jpg`} alt="" />
                 <div className="details-people-description">
@@ -39,34 +39,36 @@ const { store, dispatch } = useGlobalReducer()
                         excepturi modi perspiciatis.</p>
                 </div>
             </div>
-            <table className="table table-borderless table-detail">
-                <thead className="t-head">
-                    <tr>
-                        <th>created</th>
-                        <th> edited </th>
-                        <th>consumables</th>
-                        <th>cost-in-credits</th>
-                        <th>manufacturer</th>
-                        <th>  model  </th>
-                        <th>passengers</th>
-                        <th>vehicle-class</th>
-                    </tr>
-                </thead>
-                <tbody className="t-body">
-                    <tr>
-                        <td> {detailVehicle.created} </td>
-                        <td> {detailVehicle.edited} </td>
-                        <td> {detailVehicle.consumables} </td>
-                        <td> {detailVehicle.cost_in_credits} </td>
-                        <td> {detailVehicle.manufacturer} </td>
-                        <td> {detailVehicle.model} </td>
-                        <td> {detailVehicle.passengers} </td>
-                        <td> {detailVehicle.vehicle_class} </td>
+            <div className="table-scro">
+                <table className="table table-borderless table-detail">
+                    <thead className="t-head">
+                        <tr>
+                            <th>created</th>
+                            <th> edited </th>
+                            <th>consumables</th>
+                            <th>cost-in-credits</th>
+                            <th>manufacturer</th>
+                            <th>  model  </th>
+                            <th>passengers</th>
+                            <th>vehicle-class</th>
+                        </tr>
+                    </thead>
+                    <tbody className="t-body">
+                        <tr>
+                            <td> {detailVehicle.created} </td>
+                            <td> {detailVehicle.edited} </td>
+                            <td> {detailVehicle.consumables} </td>
+                            <td> {detailVehicle.cost_in_credits} </td>
+                            <td> {detailVehicle.manufacturer} </td>
+                            <td> {detailVehicle.model} </td>
+                            <td> {detailVehicle.passengers} </td>
+                            <td> {detailVehicle.vehicle_class} </td>
 
-                    </tr>
-                </tbody>
-            </table>
-          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <p>{ }</p>
         </div>
     )

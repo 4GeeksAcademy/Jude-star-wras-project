@@ -24,7 +24,7 @@ const CharacterDetails = () => {
 
     return (
         <div className="container-details">
-            
+
             <div className="details-people-top">
                 <img className="card-img-top card-image" src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people/${uid}.jpg`} alt="" />
                 <div className="details-people-description">
@@ -36,34 +36,36 @@ const CharacterDetails = () => {
                         excepturi modi perspiciatis.</p>
                 </div>
             </div>
-            <table className="table table-borderless table-detail">
-                <thead className="t-head">
-                    <tr>
-                        <th>created</th>
-                        <th> edited </th>
-                        <th>birth_year</th>
-                        <th>gender</th>
-                        <th>eye_color</th>
-                        <th>  hair_color  </th>
-                        <th>homeworld</th>
-                        <th>skin_color</th>
-                    </tr>
-                </thead>
-                <tbody className="t-body">
-                    <tr>
-                        <td> {detailPeople.created} </td>
-                        <td> {detailPeople.edited} </td>
-                        <td> {detailPeople.birth_year} </td>
-                        <td> {detailPeople.gender} </td>
-                        <td> {detailPeople.eye_color} </td>
-                        <td> {detailPeople.hair_color} </td>
-                        <td> {detailPeople.homeworld} </td>
-                        <td> {detailPeople.skin_color} </td>
+            <div className="table-scro">
+                <table className="table table-borderless table-detail">
+                    <thead className="t-head">
+                        <tr>
+                            <th>created</th>
+                            <th> edited </th>
+                            <th>birth_year</th>
+                            <th>gender</th>
+                            <th>eye_color</th>
+                            <th>  hair_color  </th>
+                            <th>homeworld</th>
+                            <th>skin_color</th>
+                        </tr>
+                    </thead>
+                    <tbody className="t-body">
+                        <tr>
+                            <td> {detailPeople.created} </td>
+                            <td> {detailPeople.edited} </td>
+                            <td> {detailPeople.birth_year} </td>
+                            <td> {detailPeople.gender} </td>
+                            <td> {detailPeople.eye_color} </td>
+                            <td> {detailPeople.hair_color} </td>
+                            <td> {detailPeople.homeworld} </td>
+                            <td> {detailPeople.skin_color} </td>
 
-                    </tr>
-                </tbody>
-            </table>
-          
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <p>{ }</p>
         </div>
     );
